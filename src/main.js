@@ -2,10 +2,14 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from '~/layouts/Default.vue'
+import Header from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
+  Vue.component('Ownhead', Header)
+  Vue.component('Ownfoot', Footer)
 }
