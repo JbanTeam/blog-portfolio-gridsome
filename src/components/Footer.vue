@@ -1,23 +1,18 @@
 <template>
   <footer class="footer">
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-0">
-      <div class="container">
-        <g-link class="text-white" style="font-size: 20px;" to="/">JbanTeam</g-link>
-        <!-- Toggler/collapsibe Button -->
-        <div class="py-2">
-          <button class="navbar-toggler" type="button">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <nav class="navbar bg-dark navbar-dark py-0">
+      <div class="container justify-content-between">
+        <g-link class="text-white text-decoration-none flex-grow-1" style="font-size: 20px;" to="/">JbanTeam</g-link>
+
+        <div class="madeby text-secondary flex-grow-1">
+          <span>Made by JT, © 2020</span>
         </div>
-        <ul class="navbar-nav collapse navbar-collapse justify-content-end">
-          <li class="nav-item px-1">
-            <a class="nav-link text-grey py-3" target="_blank" rel="noopener" href="https://t.me/Mad_Advocado"><telegram/></a>
-          </li>
-          <li class="nav-item px-1">
-            <a class="nav-link text-grey py-3" target="_blank" rel="noopener" href="https://github.com/JbanTeam"><github/></a>
-          </li>
-          <li class="nav-item px-1">
-            <a class="nav-link text-grey py-3" target="_blank" rel="noopener" href="https://vk.com"><vk/></a>
+
+        <ul class="soc-list flex-grow-1 justify-content-end">
+          <li class="soc-item ml-3" v-for="link in links" :key="link.url">
+            <a class="soc-link text-grey px-0" target="_blank" rel="noopener" :href="link.url">
+              <font-awesome :icon="link.icon" size="lg" fixed-width />
+            </a>
           </li>
         </ul>
       </div>
@@ -26,29 +21,61 @@
 </template>
 
 <script>
-import Telegram from 'vue-material-design-icons/Telegram'
-import Github from 'vue-material-design-icons/Github'
-import Vk from 'vue-material-design-icons/Vk'
 export default {
-  components: {
-    Telegram,
-    Github,
-    Vk
-  },
   props: ["siteName"],
   data() {
     return {
-      
+      links: [
+        {
+          url: "https://t.me/Mad_Advocado",
+          icon: ["fab", "telegram-plane"]
+        },
+        {
+          url: "https://github.com/JbanTeam",
+          icon: ["fab", "github"]
+        },
+        {
+          url: "https://vk.com",
+          icon: ["fab", "vk"]
+        }
+      ]
     };
   }
 };
 </script>
 
-<style>
+<style scoped>
 .footer {
   margin-top: auto;
 }
 .text-grey {
   color: #6c757d;
+}
+.soc-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.soc-link {
+  display: block;
+  text-align: right;
+}
+.soc-link:hover {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.madeby {
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .madeby {
+    font-size: 12px;
+    text-align: right;
+  }
+  .soc-list {
+    display: none;
+  }
 }
 </style>

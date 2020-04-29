@@ -1,14 +1,17 @@
 <template>
   <div class="app">
+    <!-- header -->
     <Ownhead :siteName="$static.metadata.siteName" />
-    <div class="container">
+    <!-- route content -->
+    <div class="container py-5">
       <div class="row">
         <div class="col col-12">
           <slot />
         </div>
       </div>
     </div>
-    <Ownfoot/>
+    <!-- footer -->
+    <Ownfoot />
   </div>
 </template>
 
@@ -22,22 +25,13 @@ query {
 
 <script>
 export default {
-  components: {
+  components: {},
+  mounted() {
+    document.querySelector("html").classList.remove("scroll-off");
+    document.querySelector(".mobile-menu").classList.remove("scroll-on");
   }
-}
+};
 </script>
 
 <style>
-body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-}
-.app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
 </style>

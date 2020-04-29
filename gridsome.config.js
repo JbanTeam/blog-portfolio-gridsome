@@ -1,4 +1,4 @@
-// This is where project configuration and plugin options are located. 
+// This is where project configuration and plugin options are located.
 // Learn more: https://gridsome.org/docs/config
 
 // Changes here require a server restart.
@@ -14,19 +14,26 @@ module.exports = {
       options: {
         path: 'src/content/posts/**/*.md',
         typeName: 'Post',
-        route: '/:title',
+        route: '/blog/:title',
+        resolveAbsolutePaths: true,
         remark: {
-          plugins: [
-            ['@gridsome/remark-prismjs', {transformInlineCode: true}]
-          ]
-        }
-      }
+          plugins: [['@gridsome/remark-prismjs', { transformInlineCode: true }]],
+        },
+      },
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'src/content/images/**/*.md',
+        typeName: 'ProjectsArr',
+        resolveAbsolutePaths: true,
+      },
     },
     {
       use: '@gridsome/plugin-sitemap',
       options: {
         cacheTime: 600000, // default
-      }
+      },
     },
     {
       use: 'gridsome-plugin-feed',
@@ -34,19 +41,19 @@ module.exports = {
         contentTypes: ['Post'],
         feedOptions: {
           title: 'A Gridsome Minimal Blog',
-          description: 'Best blog feed evah.'
+          description: 'Best blog feed evah.',
         },
         rss: {
           enabled: true,
-          output: '/feed.xml'
+          output: '/feed.xml',
         },
         atom: {
           enabled: false,
-          output: '/feed.atom'
+          output: '/feed.atom',
         },
         json: {
           enabled: false,
-          output: '/feed.json'
+          output: '/feed.json',
         },
         maxItems: 25,
         htmlFields: ['description', 'content'],
@@ -55,9 +62,9 @@ module.exports = {
         nodeToFeedItem: (node) => ({
           title: node.title,
           date: node.date || node.fields.date,
-          content: node.content
-        })
-      }
-    }
-  ]
-}
+          content: node.content,
+        }),
+      },
+    },
+  ],
+};

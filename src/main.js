@@ -1,15 +1,39 @@
-// This is the main.js file. Import global CSS and scripts here.
-// The Client API can be used here. Learn more: gridsome.org/docs/client-api
+import DefaultLayout from '~/layouts/Default.vue';
+import Header from '~/components/Header.vue';
+import Footer from '~/components/Footer.vue';
 
-import DefaultLayout from '~/layouts/Default.vue'
-import Header from '~/components/Header.vue'
-import Footer from '~/components/Footer.vue'
+import './assets/css/styles.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/css/hamburgers.min.css';
 
-import 'bootstrap/dist/css/bootstrap.min.css'
+import VTooltip from 'v-tooltip';
 
-export default function (Vue, { router, head, isClient }) {
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { config, library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faGithub,
+  faTelegramPlane,
+  faVk,
+  faJsSquare,
+  faVuejs,
+  faReact,
+  faHtml5,
+  faCss3,
+  faNodeJs,
+  faWordpress,
+  faModx,
+  faOpencart,
+} from '@fortawesome/free-brands-svg-icons';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+config.autoAddCss = false;
+library.add(faGithub, faTelegramPlane, faVk, faJsSquare, faVuejs, faReact, faHtml5, faCss3, faNodeJs, faWordpress, faModx, faOpencart);
+
+export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout)
-  Vue.component('Ownhead', Header)
-  Vue.component('Ownfoot', Footer)
+  Vue.component('Layout', DefaultLayout);
+  Vue.component('Ownhead', Header);
+  Vue.component('Ownfoot', Footer);
+  Vue.component('font-awesome', FontAwesomeIcon);
+  Vue.use(VTooltip);
 }

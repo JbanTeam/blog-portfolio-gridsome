@@ -1,7 +1,8 @@
 ---
-title: "Second Post"
-description: "second post"
+title: 'Second Post'
+description: 'Second post, written in Markdown'
 date: 2019-12-25
+image: '/uploads/blog/coding_line_art_concept-01.jpg'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla arcu sit amet nunc pulvinar sagittis. Quisque condimentum faucibus posuere. Etiam nisl ex, lobortis a felis a, ornare accumsan turpis. Etiam tristique lobortis nisl eu congue. Vivamus tempus enim pharetra sem rhoncus, eget facilisis turpis commodo. Aenean posuere ultricies erat, a dapibus tortor semper eget. Nullam sed cursus risus. Fusce massa ligula, varius pellentesque magna in, malesuada faucibus magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed dui turpis, fermentum ut varius non, sollicitudin quis elit. Sed dignissim enim id nulla vehicula, nec accumsan ante vestibulum. Donec luctus mollis mi ut iaculis. Aenean sit amet erat mi.
