@@ -1,8 +1,9 @@
 <template>
   <Layout>
     <div class="article">
-      <h1 class="article-title">{{$page.post.title}}</h1>
-      <p class="article-date"> {{ $page.post.date}} · <i>{{$page.post.timeToRead}} min read</i></p>
+      <h1 class="article-title mb-3 text-center">{{$page.post.title}}</h1>
+      <p class="article-desc text-center">{{$page.post.description}}</p>
+      <p class="article-date mb-5"> {{ $page.post.date}} · <i>{{$page.post.timeToRead}} min read</i></p>
       <article v-html="$page.post.content" />
     </div>
   </Layout>
@@ -22,7 +23,9 @@ query Post ($path: String!) {
   post: post (path: $path) {
     id
     title
+    description
     content
+    tags
     date (format: "D MMMM YYYY")
     timeToRead
   }
@@ -38,10 +41,35 @@ query Post ($path: String!) {
   margin-bottom: 0;
 }
 
-.article-date {
+.article-desc {
+  font-size: 21px;
+}
+
+.article .article-date {
   color: var(--app-font-color);
   margin-top: 0;
   font-size: 0.8em;
+}
+
+.article h2 {
+  margin: 0px 0px 30px 0px;
+}
+.article h3 {
+  margin: 0px 0px 22px 0px;
+}
+.article h4 {
+  margin: 0px 0px 18px 0px;
+}
+.article h5,
+.article h5 {
+  margin: 0px 0px 15px 0px;
+}
+.article p {
+  font-size: 18px;
+}
+
+.article li {
+  margin: 0px 0px 12px 0px;
 }
 
 .article blockquote {
@@ -74,9 +102,8 @@ query Post ($path: String!) {
 }
 
 .article img {
-  margin: auto;
-  width: 80%;
+  max-width: 100%;
   display: block;
-  margin: 10px auto;
+  margin: 30px auto;
 }
 </style>

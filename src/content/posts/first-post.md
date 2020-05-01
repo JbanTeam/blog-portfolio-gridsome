@@ -3,6 +3,7 @@ title: 'First Post'
 description: 'The first post written in Markdown'
 date: 2019-04-20
 image: '/uploads/blog/02_preview-1024x819.jpg'
+tags: ['Text']
 ---
 
 This is the first post, it is written in Markdown.

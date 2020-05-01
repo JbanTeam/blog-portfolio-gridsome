@@ -24,10 +24,25 @@ import {
   faModx,
   faOpencart,
 } from '@fortawesome/free-brands-svg-icons';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 config.autoAddCss = false;
-library.add(faGithub, faTelegramPlane, faVk, faJsSquare, faVuejs, faReact, faHtml5, faCss3, faNodeJs, faWordpress, faModx, faOpencart);
+library.add(
+  faGithub,
+  faTelegramPlane,
+  faVk,
+  faJsSquare,
+  faVuejs,
+  faReact,
+  faHtml5,
+  faCss3,
+  faNodeJs,
+  faWordpress,
+  faModx,
+  faOpencart,
+  faArrowAltCircleRight
+);
 
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component

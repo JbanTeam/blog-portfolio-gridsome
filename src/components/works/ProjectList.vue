@@ -2,18 +2,18 @@
   <div class="container">
     <!-- <div class="row no-gutters flex-column"> -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-      <PostItem v-for="project in projects" :key="project.link" :project="project" />
+      <ProjectItem v-for="project in projects" :key="project.link" :project="project" />
     </div>
   </div>
 </template>
 
 <script>
-import PostItem from "./ProjectItem";
+import ProjectItem from "./ProjectItem";
 
 export default {
   props: ["projects"],
   components: {
-    PostItem
+    ProjectItem
   }
 };
 </script>

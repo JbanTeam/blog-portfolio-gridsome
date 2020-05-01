@@ -11,23 +11,12 @@
 import PostItem from "./PostItem";
 
 export default {
-  props: ["year"],
+  props: ["posts"],
   components: {
     PostItem
   },
   created() {
     // console.log(this.posts);
-  },
-  computed: {
-    posts() {
-      return this.$page.allPost.edges;
-    },
-    postsByYear() {
-      const posts = this.$page.allPost.edges;
-      return posts.filter(post => {
-        return post.node.date.includes(this.year);
-      });
-    }
   }
 };
 </script>
