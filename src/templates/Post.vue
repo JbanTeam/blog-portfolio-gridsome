@@ -68,6 +68,11 @@ query Post ($path: String!) {
   font-size: 18px;
 }
 
+.article ol,
+.article ul {
+  margin: 25px 0px;
+}
+
 .article li {
   margin: 0px 0px 12px 0px;
 }
@@ -103,7 +108,11 @@ query Post ($path: String!) {
 
 .article img {
   max-width: 100%;
+  object-fit: cover;
   display: block;
   margin: 30px auto;
+}
+.article img:first-of-type {
+  max-height: 500px;
 }
 </style>

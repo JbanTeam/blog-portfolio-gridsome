@@ -1,0 +1,138 @@
+// light variables*******************************************************
+$light-theme_palette: #e2e2e2;
+$light-theme_palette_hover: #ffffff;
+
+$light-theme_app_bg: #fff;
+$light-theme_iconbg_color1: #f2f2f2;
+$light-theme_iconbg_color2: #f9f9f9;
+$light-theme_logolink: #fff;
+
+$light-theme_navbar_bg: #c7c7c7;
+$light-theme_navlink: #6c757d;
+$light-theme_navlink_hover: #ebebeb;
+$light-theme_navlink_active: #fff;
+$light-theme_navlink_bg: #007bff;
+
+$light-theme_soclink: #6c757d;
+$light-theme_soclink_hover: #007bff;
+$light-theme_madeby: #007bff;
+
+$light-theme_text: #000;
+$light-theme_line: #9c9c9c;
+
+$light-theme_a_link: #007bff;
+$light-theme_a_link_hover: #65abf7;
+
+$light-theme_btn_bg: #007bff;
+$light-theme_btn_text: #79baff;
+$light-theme_btn_text_hover: #fff;
+
+$light-theme_card_bg: #fff;
+$light-theme_card_text: #000;
+$light-theme_card_src: #007bff;
+$light-theme_card_overlay: rgba(0, 0, 0, 0.55);
+$light-theme_card_overlay_icon: #ffffff;
+$light-theme_card_border: #c5c5c5;
+$light-theme_card_border_hover: #2c3035;
+$light-theme_card_boxshadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.4);
+
+$light-theme_tooltip_bg: #007bff;
+$light-theme_tooltip_text: #fff;
+
+/* light-theme **********************************************************/
+/* light-theme **********************************************************/
+.light-theme {
+  color: $light-theme_text;
+  // links
+  a {
+    color: $light-theme_a_link;
+    &:hover {
+      color: $light-theme_a_link_hover;
+    }
+  }
+  // main bg
+  .app {
+    background-color: $light-theme_app_bg;
+  }
+  // navbar
+  .navbar {
+    background-color: $light-theme_navbar_bg;
+    .logo-link {
+      color: $light-theme_logolink;
+    }
+    .nav-link {
+      color: $light-theme_navlink;
+      &:hover {
+        color: $light-theme_navlink_hover;
+      }
+      &-active {
+        color: $light-theme_navlink_active;
+        background-color: $light-theme_navlink_bg;
+        &:hover {
+          color: $light-theme_navlink_active;
+        }
+      }
+    }
+  }
+  // palette
+  .palette-themes {
+    background-color: $light-theme_navbar_bg;
+  }
+  // footer
+  .madeby {
+    color: $light-theme_madeby;
+  }
+  .soc-link {
+    color: $light-theme_soclink;
+    &:hover {
+      color: $light-theme_soclink_hover;
+    }
+  }
+  // about page lines
+  .withline::after,
+  .withline::before {
+    background-color: $light-theme_line;
+  }
+  // contacts button
+  .contacts-btn {
+    background-color: $light-theme_btn_bg;
+    color: $light-theme_btn_text;
+    &:hover {
+      color: $light-theme_btn_text_hover;
+    }
+  }
+  // cards
+  .card-link {
+    color: $light-theme_card_text;
+    &:hover {
+      color: $light-theme_card_text;
+    }
+    .tag-src,
+    .card-date {
+      color: $light-theme_card_src;
+    }
+    .card-btn {
+      background-color: $light-theme_card_overlay;
+      svg {
+        color: $light-theme_card_overlay_icon;
+      }
+    }
+  }
+  .card {
+    background-color: $light-theme_card_bg;
+    border-color: $light-theme_card_border;
+    &:hover {
+      border-color: $light-theme_card_border_hover;
+      box-shadow: $light-theme_card_boxshadow;
+    }
+  }
+  // tooltip
+  .tooltip .tooltip-inner {
+    background: $light-theme_tooltip_bg;
+    color: $light-theme_tooltip_text;
+  }
+
+  .tooltip .tooltip-arrow {
+    border-color: $light-theme_tooltip_bg;
+  }
+}

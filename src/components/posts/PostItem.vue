@@ -1,12 +1,13 @@
 <template>
-  <div class="col mb-4">
-    <g-link class="d-block h-100 text-decoration-none text-dark" exact :to="this.post.path">
+  <div class="col col-sm-6 col-md-4 col-10 mb-4">
+    <g-link class="card-link d-block h-100 text-decoration-none" exact :to="this.post.path">
       <div class="card h-100">
         <g-image immediate :src="this.img" class="blog-image card-img-top" />
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">{{this.post.title}}</h5>
-          <p class="card-text">{{this.post.description}}</p>
-          <div class="tags mt-auto">
+          <p class="card-text flex-grow-1">{{this.post.description}}</p>
+          <span class="card-date">{{this.post.date}}</span>
+          <div class="tags">
             <span class="tag" v-for="tag in this.post.tags" :key="tag">#{{tag}}</span>
           </div>
         </div>
@@ -22,9 +23,7 @@
 export default {
   props: ["post"],
   data() {
-    return {
-      // img: ''
-    };
+    return {};
   },
   computed: {
     date() {
@@ -41,14 +40,15 @@ export default {
 .card {
   transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
-.card:hover {
-  border-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-}
 
 .card .blog-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+.card-date {
+  font-size: 13px;
+  margin: 0px 0px 10px 0px;
 }
 </style>

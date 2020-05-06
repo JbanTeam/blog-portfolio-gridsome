@@ -1,0 +1,137 @@
+// red variables************************************************************
+$red-theme_palette: #fc2d41;
+$red-theme_palette_hover: #ff5d6d;
+
+$red-theme_app_bg: #963131;
+$red-theme_iconbg_color1: #8a2929;
+$red-theme_iconbg_color2: #912d2d;
+$red-theme_logolink: #fff;
+
+$red-theme_navbar_bg: #7c020e;
+$red-theme_navlink: #e9e8e8;
+$red-theme_navlink_hover: #fff;
+$red-theme_navlink_active: #fff;
+$red-theme_navlink_bg: #ff473a;
+
+$red-theme_soclink: #e9e8e8;
+$red-theme_soclink_hover: #ff473a;
+$red-theme_madeby: #ff473a;
+
+$red-theme_text: #fff;
+$red-theme_line: #bebebe;
+
+$red-theme_a_link: #ff473a;
+$red-theme_a_link_hover: #fd857c;
+
+$red-theme_btn_bg: #ff473a;
+$red-theme_btn_text: #b42015;
+$red-theme_btn_text_hover: #fff;
+
+$red-theme_card_bg: #7c020e;
+$red-theme_card_text: #fff;
+$red-theme_card_src: #ff473a;
+$red-theme_card_overlay: rgba(0, 0, 0, 0.55);
+$red-theme_card_overlay_icon: #ff473a;
+$red-theme_card_border: #c5c5c5;
+$red-theme_card_border_hover: #ff473a;
+$red-theme_card_boxshadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.4);
+
+$red-theme_tooltip_bg: #ff473a;
+$red-theme_tooltip_text: #fff;
+/* red-theme ********************************************************************************/
+/* red-theme ********************************************************************************/
+.red-theme {
+  color: $red-theme_text;
+  // links
+  a {
+    color: $red-theme_a_link;
+    &:hover {
+      color: $red-theme_a_link_hover;
+    }
+  }
+  // main bg
+  .app {
+    background-color: $red-theme_app_bg;
+  }
+  // navbar
+  .navbar {
+    background-color: $red-theme_navbar_bg;
+    .logo-link {
+      color: $red-theme_logolink;
+    }
+    .nav-link {
+      color: $red-theme_navlink;
+      &:hover {
+        color: $red-theme_navlink_hover;
+      }
+      &-active {
+        color: $red-theme_navlink_active;
+        background-color: $red-theme_navlink_bg;
+        &:hover {
+          color: $red-theme_navlink_active;
+        }
+      }
+    }
+  }
+  // palette
+  .palette-themes {
+    background-color: $red-theme_navbar_bg;
+  }
+  // footer
+  .madeby {
+    color: $red-theme_madeby;
+  }
+  .soc-link {
+    color: $red-theme_soclink;
+    &:hover {
+      color: $red-theme_soclink_hover;
+    }
+  }
+  // about page lines
+  .withline::after,
+  .withline::before {
+    background-color: $red-theme_line;
+  }
+  // contacts button
+  .contacts-btn {
+    background-color: $red-theme_btn_bg;
+    color: $red-theme_btn_text;
+    &:hover {
+      color: $red-theme_btn_text_hover;
+    }
+  }
+  // cards
+  .card-link {
+    color: $red-theme_card_text;
+    &:hover {
+      color: $red-theme_card_text;
+    }
+    .tag-src,
+    .card-date {
+      color: $red-theme_card_src;
+    }
+    .card-btn {
+      background-color: $red-theme_card_overlay;
+      svg {
+        color: $red-theme_card_overlay_icon;
+      }
+    }
+  }
+  .card {
+    background-color: $red-theme_card_bg;
+    border-color: $red-theme_card_border;
+    &:hover {
+      border-color: $red-theme_card_border_hover;
+      box-shadow: $red-theme_card_boxshadow;
+    }
+  }
+  // tooltip
+  .tooltip .tooltip-inner {
+    background: $red-theme_tooltip_bg;
+    color: $red-theme_tooltip_text;
+  }
+
+  .tooltip .tooltip-arrow {
+    border-color: $red-theme_tooltip_bg;
+  }
+}

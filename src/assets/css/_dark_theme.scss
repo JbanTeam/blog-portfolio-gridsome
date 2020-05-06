@@ -1,0 +1,138 @@
+// dark variables*********************************************************
+$dark-theme_palette: #6c757d;
+$dark-theme_palette_hover: #899299;
+
+$dark-theme_app_bg: #43484d;
+$dark-theme_iconbg_color1: #343a40;
+$dark-theme_iconbg_color2: #464d53;
+$dark-theme_logolink: #fff;
+
+$dark-theme_navbar_bg: #2c3035;
+$dark-theme_navlink: #6c757d;
+$dark-theme_navlink_hover: #c6cacc;
+$dark-theme_navlink_active: #fff;
+$dark-theme_navlink_bg: #ffc107;
+
+$dark-theme_soclink: #6c757d;
+$dark-theme_soclink_hover: #ffc107;
+$dark-theme_madeby: #ffc107;
+
+$dark-theme_text: #fff;
+$dark-theme_line: #bebebe;
+
+$dark-theme_a_link: #ffc107;
+$dark-theme_a_link_hover: #ffdc74;
+
+$dark-theme_btn_bg: #ffc107;
+$dark-theme_btn_text: #ac8101;
+$dark-theme_btn_text_hover: #fff;
+
+$dark-theme_card_bg: #2c3035;
+$dark-theme_card_text: #fff;
+$dark-theme_card_src: #ffc107;
+$dark-theme_card_overlay: rgba(0, 0, 0, 0.55);
+$dark-theme_card_overlay_icon: #ffc107;
+$dark-theme_card_border: #c5c5c5;
+$dark-theme_card_border_hover: #ffc107;
+$dark-theme_card_boxshadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.4);
+
+$dark-theme_tooltip_bg: #ffc107;
+$dark-theme_tooltip_text: #2c3035;
+
+/* dark-theme ********************************************************************************/
+/* dark-theme ********************************************************************************/
+.dark-theme {
+  color: $dark-theme_text;
+  // links
+  a {
+    color: $dark-theme_a_link;
+    &:hover {
+      color: $dark-theme_a_link_hover;
+    }
+  }
+  // main bg
+  .app {
+    background-color: $dark-theme_app_bg;
+  }
+  // navbar
+  .navbar {
+    background-color: $dark-theme_navbar_bg;
+    .logo-link {
+      color: $dark-theme_logolink;
+    }
+    .nav-link {
+      color: $dark-theme_navlink;
+      &:hover {
+        color: $dark-theme_navlink_hover;
+      }
+      &-active {
+        color: $dark-theme_navlink_active;
+        background-color: $dark-theme_navlink_bg;
+        &:hover {
+          color: $dark-theme_navlink_active;
+        }
+      }
+    }
+  }
+  // palette
+  .palette-themes {
+    background-color: $dark-theme_navbar_bg;
+  }
+  // footer
+  .madeby {
+    color: $dark-theme_madeby;
+  }
+  .soc-link {
+    color: $dark-theme_soclink;
+    &:hover {
+      color: $dark-theme_soclink_hover;
+    }
+  }
+  // about page lines
+  .withline::after,
+  .withline::before {
+    background-color: $dark-theme_line;
+  }
+  // contacts button
+  .contacts-btn {
+    background-color: $dark-theme_btn_bg;
+    color: $dark-theme_btn_text;
+    &:hover {
+      color: $dark-theme_btn_text_hover;
+    }
+  }
+  // cards
+  .card-link {
+    color: $dark-theme_card_text;
+    &:hover {
+      color: $dark-theme_card_text;
+    }
+    .tag-src,
+    .card-date {
+      color: $dark-theme_card_src;
+    }
+    .card-btn {
+      background-color: $dark-theme_card_overlay;
+      svg {
+        color: $dark-theme_card_overlay_icon;
+      }
+    }
+  }
+  .card {
+    background-color: $dark-theme_card_bg;
+    border-color: $dark-theme_card_border;
+    &:hover {
+      border-color: $dark-theme_card_border_hover;
+      box-shadow: $dark-theme_card_boxshadow;
+    }
+  }
+  // tooltip
+  .tooltip .tooltip-inner {
+    background: $dark-theme_tooltip_bg;
+    color: $dark-theme_tooltip_text;
+  }
+
+  .tooltip .tooltip-arrow {
+    border-color: $dark-theme_tooltip_bg;
+  }
+}

@@ -3,6 +3,13 @@
     <main class="posts">
       <h1 class="title text-center mb-4">My blog is here</h1>
       <div class="form-group sort-wrapper">
+        <div class="mr-3">
+          <label for="sort">Sort by date</label>
+          <select class="form-control form-control-sm" id="sort" v-model="date">
+            <option>Newer</option>
+            <option>Older</option>
+          </select>
+        </div>
         <div>
           <label for="sort">Sort by:</label>
           <select class="form-control form-control-sm" id="sort" v-model="tag">
@@ -11,7 +18,6 @@
         </div>
       </div>
       <PostList :posts="this.posts" />
-      <!-- <PostList v-for="year in years" :key="year" :year="year" /> -->
     </main>
   </Layout>
 </template>
@@ -25,25 +31,28 @@ export default {
   metaInfo: {
     title: "Blog"
   },
-  created() {
-    console.log(this.$page.allPost.edges);
-    console.log(this.tags);
-  },
+  created() {},
   data() {
     return {
-      tag: "All"
+      tag: "All",
+      date: "Newer"
     };
   },
   computed: {
     posts() {
-      let posts = this.$page.allPost.edges;
-      if (this.tag === "All") return posts;
+      let posts = [];
+      if (this.tag === "All") posts = this.$page.allPost.edges;
       else {
-        posts = posts.filter(post => {
+        posts = this.$page.allPost.edges.filter(post => {
           return post.node.tags.includes(this.tag);
         });
-        return posts;
       }
+      posts.sort((a, b) => {
+        if (this.date === "Older")
+          return Date.parse(a.node.date) - Date.parse(b.node.date);
+        else return Date.parse(b.node.date) - Date.parse(a.node.date);
+      });
+      return posts;
     },
     tags() {
       let tags = [];

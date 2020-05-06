@@ -24,7 +24,7 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'src/content/images/**/*.md',
+        path: 'src/content/projects/**/*.md',
         typeName: 'ProjectsArr',
         resolveAbsolutePaths: true,
       },

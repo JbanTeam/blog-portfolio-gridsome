@@ -1,0 +1,39 @@
+@import '_light_theme.scss';
+@import '_dark_theme.scss';
+@import '_red_theme.scss';
+@import '_blue_theme.scss';
+@import '_green_theme.scss';
+
+// palettes**************************************************
+.palette {
+  &-light {
+    color: $light-theme_palette;
+    &:hover {
+      color: $light-theme_palette_hover;
+    }
+  }
+  &-dark {
+    color: $dark-theme_palette;
+    &:hover {
+      color: $dark-theme_palette_hover;
+    }
+  }
+  &-red {
+    color: $red-theme_palette;
+    &:hover {
+      color: $red-theme_palette_hover;
+    }
+  }
+  &-blue {
+    color: $blue-theme_palette;
+    &:hover {
+      color: $blue-theme_palette_hover;
+    }
+  }
+  &-green {
+    color: $green-theme_palette;
+    &:hover {
+      color: $green-theme_palette_hover;
+    }
+  }
+}

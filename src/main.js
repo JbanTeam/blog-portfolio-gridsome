@@ -3,6 +3,7 @@ import Header from '~/components/Header.vue';
 import Footer from '~/components/Footer.vue';
 
 import './assets/css/styles.css';
+import './assets/css/themes.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/hamburgers.min.css';
 
@@ -24,7 +25,7 @@ import {
   faModx,
   faOpencart,
 } from '@fortawesome/free-brands-svg-icons';
-import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleRight, faPalette } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 config.autoAddCss = false;
@@ -41,7 +42,8 @@ library.add(
   faWordpress,
   faModx,
   faOpencart,
-  faArrowAltCircleRight
+  faArrowAltCircleRight,
+  faPalette
 );
 
 export default function(Vue, { router, head, isClient }) {
@@ -51,4 +53,5 @@ export default function(Vue, { router, head, isClient }) {
   Vue.component('Ownfoot', Footer);
   Vue.component('font-awesome', FontAwesomeIcon);
   Vue.use(VTooltip);
+  Vue.prototype.$eventBus = new Vue();
 }

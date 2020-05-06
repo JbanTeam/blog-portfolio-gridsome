@@ -1,7 +1,9 @@
 <template>
   <Layout>
     <div class="img-wrap">
-      <g-image class="img" alt="geek" src="~/assets/code.jpg" />
+      <!-- <g-image class="img" alt="geek" src="~/assets/codeIcon.svg" /> -->
+      <CodeIcon />
+
     </div>
     <main class="main pt-5">
       <h1 class="title text-center mb-3">Welcome to my portfolio/blog website</h1>
@@ -21,13 +23,16 @@
 
 <script>
 import ProjectList from "~/components/works/ProjectList";
+import CodeIcon from "~/components/CodeIcon";
 export default {
   metaInfo: {
     title: "Home"
   },
-  created() {
-    // console.log(this.tags);
+  components: {
+    ProjectList,
+    CodeIcon
   },
+  created() {},
   data() {
     return {
       tag: "All"
@@ -52,9 +57,6 @@ export default {
       tags = ["All", "Source code", "Site", ...new Set(tags)];
       return tags;
     }
-  },
-  components: {
-    ProjectList
   }
 };
 </script>

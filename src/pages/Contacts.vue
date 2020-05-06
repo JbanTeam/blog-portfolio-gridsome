@@ -15,7 +15,7 @@
           <div class="form-group" v-for="name in Object.keys(formData)" :key="formData[name].label">
             <label :for="name">{{formData[name].label}}</label>
             <input v-if="name !== 'textarea'" type="text" class="form-control" :id="name" :value="formData[name].value" @input="change(name, $event)">
-            <textarea v-else class="form-control" :id="name" rows="3" :value="formData[name].value" @input="change(name, $event)"></textarea>
+            <textarea v-else class="form-control" :id="name" rows="6" :value="formData[name].value" @input="change(name, $event)"></textarea>
             <div v-if="formData[name].valid !== null" :class="formData[name].valid ? 'valid-feedback' : 'invalid-feedback'">
               {{formData[name].valid ? 'Looks good!' : formData[name].errorText}}
             </div>
@@ -24,7 +24,7 @@
             <input type="checkbox" class="form-check-input" id="check" v-model="formChecked">
             <label class="form-check-label" for="check">I agree with <a href="#">privacy policy</a>.</label>
           </div>
-          <button type="submit" class="btn btn-primary" :class="btnDisabled ? 'disabled' : ''" :disabled="btnDisabled">Send</button>
+          <button type="submit" class="btn contacts-btn" :class="btnDisabled ? 'disabled' : ''" :disabled="btnDisabled">Send</button>
         </form>
       </div>
     </main>

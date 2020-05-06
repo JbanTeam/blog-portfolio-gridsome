@@ -117,7 +117,6 @@ export default {
   min-width: 300px;
   height: 1px;
   position: absolute;
-  background-color: rgba(52, 58, 64, 0.42);
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -164,14 +163,6 @@ export default {
   margin-bottom: 0;
 }
 
-.vue-tooltip.tooltip-custom {
-  background-color: rgba(52, 58, 64, 0.75);
-}
-
-.vue-tooltip.tooltip-custom .tooltip-arrow {
-  border-color: rgba(52, 58, 64, 0.75);
-}
-
 /* tooltip**************************************************************************************** */
 /* tooltip**************************************************************************************** */
 .tooltip {
@@ -180,8 +171,6 @@ export default {
 }
 
 .tooltip .tooltip-inner {
-  background: rgba(52, 58, 64, 0.75);
-  color: white;
   border-radius: 6px;
   padding: 5px 12px 4px;
   min-width: 80px;
@@ -193,7 +182,6 @@ export default {
   border-style: solid;
   position: absolute;
   margin: 5px;
-  border-color: rgba(52, 58, 64, 0.75);
   z-index: 1;
 }
 
