@@ -16,7 +16,7 @@ export default {
     if (localStorage.getItem("mytheme")) {
       this.currentTheme = localStorage.getItem("mytheme");
     } else {
-      this.currentTheme = "light-theme";
+      this.currentTheme = "dark-theme";
     }
   },
   data() {
