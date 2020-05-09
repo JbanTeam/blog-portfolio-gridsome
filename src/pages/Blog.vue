@@ -1,21 +1,12 @@
 <template>
   <Layout>
     <main class="posts">
-      <h1 class="title text-center mb-4">My blog is here</h1>
+      <h1 class="title text-center mb-4">{{this.$lang.blog[curLang].title}}</h1>
       <div class="form-group sort-wrapper">
-        <div class="mr-3">
-          <label for="sort">Sort by date</label>
-          <select class="form-control form-control-sm" id="sort" v-model="date">
-            <option>Newer</option>
-            <option>Older</option>
-          </select>
-        </div>
-        <div>
-          <label for="sort">Sort by:</label>
-          <select class="form-control form-control-sm" id="sort" v-model="tag">
-            <option v-for="tag in this.tags" :key="tag">{{tag}}</option>
-          </select>
-        </div>
+
+        <SortDate :lang="curLang" @dateChange="onDateChange($event)" />
+        <SortAll :lang="curLang" :tags="tags" :sortTag="tag" :selectOpts="initialSelectOpts" @tagChange="onTagChange($event)" />
+
       </div>
       <PostList :posts="this.posts" />
     </main>
@@ -24,31 +15,52 @@
 
 <script>
 import PostList from "@/components/posts/PostList";
+import SortAll from "@/components/sort/SortAll";
+import SortDate from "@/components/sort/SortDate";
 export default {
   components: {
-    PostList
+    PostList,
+    SortAll,
+    SortDate
   },
   metaInfo: {
     title: "Blog"
   },
-  created() {},
+  created() {
+    let lang = localStorage.getItem("mylang");
+    if (lang) {
+      this.curLang = lang;
+      this.tag = this.initialSelectOpts[this.curLang][0];
+    }
+    this.localTags = [...this.initialSelectOpts[this.curLang]];
+  },
+  mounted() {
+    this.$eventBus.$on("changeLang", this.onLangChange);
+  },
   data() {
     return {
+      curLang: "en",
       tag: "All",
-      date: "Newer"
+      date: "Newer",
+      localTags: [],
+      initialSelectOpts: {
+        en: ["All"],
+        rus: ["Все"]
+      }
     };
   },
   computed: {
     posts() {
       let posts = [];
-      if (this.tag === "All") posts = this.$page.allPost.edges;
+      if (this.tag === "All" || this.tag === "Все")
+        posts = this.$page.allPost.edges;
       else {
         posts = this.$page.allPost.edges.filter(post => {
           return post.node.tags.includes(this.tag);
         });
       }
       posts.sort((a, b) => {
-        if (this.date === "Older")
+        if (this.date === "Older" || this.date === "Сначала старые")
           return Date.parse(a.node.date) - Date.parse(b.node.date);
         else return Date.parse(b.node.date) - Date.parse(a.node.date);
       });
@@ -59,8 +71,23 @@ export default {
       this.$page.allPost.edges.forEach(post => {
         tags.push(...post.node.tags);
       });
-      tags = ["All", ...new Set(tags)];
+      tags = [...this.localTags, ...new Set(tags)];
       return tags;
+    }
+  },
+  methods: {
+    // TODO: cards dates localization
+    onDateChange(date) {
+      this.date = date;
+    },
+    onTagChange(tag) {
+      this.tag = tag;
+    },
+    onLangChange(lang) {
+      let index = this.initialSelectOpts[this.curLang].indexOf(this.tag);
+      if (index !== -1) this.tag = this.initialSelectOpts[lang][index];
+      this.curLang = lang;
+      this.localTags = [...this.initialSelectOpts[this.curLang]];
     }
   }
 };

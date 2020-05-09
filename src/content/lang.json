@@ -1,0 +1,100 @@
+{
+  "links": {
+    "en": [{
+        "name": "Home",
+        "url": "/"
+      },
+      {
+        "name": "About",
+        "url": "/about"
+      },
+      {
+        "name": "Blog",
+        "url": "/blog"
+      },
+      {
+        "name": "Contacts",
+        "url": "/contacts"
+      }
+    ],
+    "rus": [{
+        "name": "Гавная",
+        "url": "/"
+      },
+      {
+        "name": "Обо мне",
+        "url": "/about"
+      },
+      {
+        "name": "Блог",
+        "url": "/blog"
+      },
+      {
+        "name": "Контакты",
+        "url": "/contacts"
+      }
+    ]
+  },
+  "home": {
+    "en": {
+      "title": "Welcome to my portfolio/blog website",
+      "desc": "Here You can find posts about web-programming and to see my works."
+    },
+    "rus": {
+      "title": "Добро пожаловать на мой портфолио/блог веб-сайт",
+      "desc": "Здесь Вы можете найти статьи о веб-разработке и посмотреть мои работы."
+    }
+  },
+  "about": {
+    "en": {
+      "title": "About me",
+      "desc": "My name is JT, I'm a full-stack web-developer. You can find technologies, which I use in my work, below. If You want to cooperate with me, please write on my telegram or vKontakte."
+    },
+    "rus": {
+      "title": "Обо мне",
+      "desc": "Меня зовут JT, я full-stack веб-разработчик. Вы можете увидеть технологии, которыми я пользуюсь в своей работе, ниже. Если Вы хотите сотрудничать со иной, напишите в telegram или vKontakte."
+    }
+  },
+  "blog": {
+    "en": {
+      "title": "My blog is here"
+    },
+    "rus": {
+      "title": "Блог находится тут"
+    }
+  },
+  "contacts": {
+    "en": {
+      "title": "Contacts",
+      "desc": "Here You can write to me, or use telegram or vKontakte for it.",
+      "name": "Name",
+      "email": "Email",
+      "question": "Question or proposal",
+      "privacyText": "I agree with",
+      "privacyLink": "privacy policy",
+      "btn": "Send"
+    },
+    "rus": {
+      "title": "Напишите мне",
+      "desc": "Здесь Вы можете отправить мне сообщение, или использовать для этого telegram или vKontakte.",
+      "name": "Имя",
+      "email": "Почта",
+      "question": "Вопрос или предложение",
+      "privacyText": "Я согласен с",
+      "privacyLink": "политикой конфиденциальности",
+      "btn": "Отправить"
+    }
+  },
+  "notfound": {
+    "en": {
+      "desc": "Sorry, page not found"
+    },
+    "rus": {
+      "desc": "Извините, страница не найдена"
+    }
+  },
+  "madeby": {
+    "en": "Made by JT, © 2020",
+    "rus": "Сделано JT, © 2020"
+  }
+}

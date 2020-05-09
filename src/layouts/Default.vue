@@ -2,7 +2,7 @@
   <div class="app" :style="{backgroundImage: bgi}">
     <!-- <div class="app"> -->
     <!-- header -->
-    <Ownhead :siteName="$static.metadata.siteName" />
+    <Ownhead :siteName="$static.metadata.siteName" :links="this.$lang.links" />
     <!-- route content -->
     <div class="container py-5">
       <div class="row">
@@ -28,6 +28,7 @@ query {
 export default {
   components: {},
   mounted() {
+    // console.log(this.$lang);
     this.$eventBus.$on("changeTheme", this.onThemeChange);
 
     let theme = localStorage.getItem("mytheme");

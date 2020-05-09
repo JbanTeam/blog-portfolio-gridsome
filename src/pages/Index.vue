@@ -6,15 +6,16 @@
 
     </div>
     <main class="main pt-5">
-      <h1 class="title text-center mb-3">Welcome to my portfolio/blog website</h1>
-      <p class="desc projects-desc text-center">Here You can find posts about web-programming and to see my works.</p>
+      <h1 class="title text-center mb-3">{{this.$lang.home[curLang].title}}</h1>
+      <p class="desc projects-desc text-center">{{this.$lang.home[curLang].desc}}</p>
       <div class="form-group sort-wrapper">
-        <div>
+        <SortAll :lang="curLang" :tags="tags" :sortTag="tag" :selectOpts="initialSelectOpts" @tagChange="onTagChange($event)" />
+        <!-- <div>
           <label for="sort">Sort by:</label>
           <select class="form-control form-control-sm" id="sort" v-model="tag">
             <option v-for="tag in this.tags" :key="tag">{{tag}}</option>
           </select>
-        </div>
+        </div> -->
       </div>
       <ProjectList :projects="this.projects" />
     </main>
@@ -24,27 +25,50 @@
 <script>
 import ProjectList from "~/components/works/ProjectList";
 import CodeIcon from "~/components/CodeIcon";
+import SortAll from "@/components/sort/SortAll";
 export default {
   metaInfo: {
     title: "Home"
   },
   components: {
     ProjectList,
-    CodeIcon
+    CodeIcon,
+    SortAll
   },
-  created() {},
+  created() {
+    let lang = localStorage.getItem("mylang");
+    if (lang) {
+      this.curLang = lang;
+      this.tag = this.initialSelectOpts[this.curLang][0];
+    }
+    this.localTags = [...this.initialSelectOpts[this.curLang]];
+  },
+  mounted() {
+    this.$eventBus.$on("changeLang", this.onLangChange);
+  },
   data() {
     return {
-      tag: "All"
+      curLang: "en",
+      tag: "All",
+      localTags: [],
+      initialSelectOpts: {
+        en: ["All", "Source code", "Site"],
+        rus: ["Все", "Исходный код", "Сайт"]
+      }
     };
   },
   computed: {
     projects() {
+      // TODO: projects src localization
       let projects = this.$page.allProjectsArr.edges[0].node.projects;
-      if (this.tag === "All") return projects;
+      if (this.tag === "All" || this.tag === "Все") return projects;
       else {
+        let index = this.initialSelectOpts[this.curLang].indexOf(this.tag);
         projects = projects.filter(proj => {
-          return proj.tags.includes(this.tag) || proj.src === this.tag;
+          return (
+            proj.tags.includes(this.tag) ||
+            proj.src === this.initialSelectOpts.en[index]
+          );
         });
         return projects;
       }
@@ -54,8 +78,19 @@ export default {
       this.$page.allProjectsArr.edges[0].node.projects.forEach(proj => {
         tags.push(...proj.tags);
       });
-      tags = ["All", "Source code", "Site", ...new Set(tags)];
+      tags = [...this.localTags, ...new Set(tags)];
       return tags;
+    }
+  },
+  methods: {
+    onTagChange(tag) {
+      this.tag = tag;
+    },
+    onLangChange(lang) {
+      let index = this.initialSelectOpts[this.curLang].indexOf(this.tag);
+      if (index !== -1) this.tag = this.initialSelectOpts[lang][index];
+      this.curLang = lang;
+      this.localTags = [...this.initialSelectOpts[this.curLang]];
     }
   }
 };
@@ -66,9 +101,15 @@ query {
     edges {
       node {
         projects {
-          name,
+          name {
+            en
+            rus
+          },
           link,
-          desc,
+          desc {
+            en
+            rus
+          },
           src,
           image,
           tags

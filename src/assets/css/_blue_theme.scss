@@ -1,22 +1,28 @@
 // blue variables*************************************************************
 $blue-theme_palette: #1980ee;
 $blue-theme_palette_hover: #51a5ff;
+
 $blue-theme_app_bg: #10457e;
 $blue-theme_iconbg_color1: #0b3a6d;
 $blue-theme_iconbg_color2: #104277;
-$blue-theme_navbar_bg: #042f5e;
 $blue-theme_logolink: #fff;
+
+$blue-theme_navbar_bg: #042f5e;
 $blue-theme_navlink: #e9e8e8;
 $blue-theme_navlink_hover: #fff;
 $blue-theme_navlink_active: #fff;
 $blue-theme_navlink_bg: #fd965a;
+
 $blue-theme_soclink: #e9e8e8;
 $blue-theme_soclink_hover: #fd965a;
 $blue-theme_madeby: #fd965a;
+
 $blue-theme_text: #fff;
 $blue-theme_line: #bebebe;
+
 $blue-theme_a_link: #fd965a;
 $blue-theme_a_link_hover: #ffba92;
+
 $blue-theme_btn_bg: #fd965a;
 $blue-theme_btn_text: #b95318;
 $blue-theme_btn_text_hover: #fff;
@@ -33,6 +39,9 @@ $blue-theme_card_boxshadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.4);
 $blue-theme_tooltip_bg: #fd965a;
 $blue-theme_tooltip_text: #fff;
 
+$blue-theme_lang_hover: #fd965a;
+
+$blue-theme_404: #fd965a;
 /* blue-theme ********************************************************************************/
 /* blue-theme ********************************************************************************/
 .blue-theme {
@@ -71,6 +80,13 @@ $blue-theme_tooltip_text: #fff;
   // palette
   .palette-themes {
     background-color: $blue-theme_navbar_bg;
+  }
+  // lang
+  .lang-choose {
+    background-color: $blue-theme_navbar_bg;
+  }
+  .lang-item:hover {
+    background-color: $blue-theme_lang_hover;
   }
   // footer
   .madeby {
@@ -128,5 +144,9 @@ $blue-theme_tooltip_text: #fff;
 
   .tooltip .tooltip-arrow {
     border-color: $blue-theme_tooltip_bg;
+  }
+  // 404
+  .p404 {
+    color: $blue-theme_404;
   }
 }

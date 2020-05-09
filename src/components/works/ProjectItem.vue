@@ -6,8 +6,8 @@
       <div class="card h-100">
         <g-image immediate :src="project.image" class="image card-img-top" />
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title mb-4 text-center">{{project.name}}</h5>
-          <p class="card-text project-desc">{{project.desc}}</p>
+          <h5 class="card-title mb-4 text-center">{{project.name[curLang]}}</h5>
+          <p class="card-text project-desc">{{project.desc[curLang]}}</p>
           <div class="tags mt-auto">
             <span class="tag" v-for="tag in project.tags" :key="tag">#{{tag}}</span>
             <span class="tag tag-src">#{{project.src.toLowerCase()}}</span>
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  props: ["project"],
+  props: ["project", "curLang"],
   data() {
     return {};
   },

@@ -38,6 +38,10 @@ $green-theme_card_boxshadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.4);
 
 $green-theme_tooltip_bg: #daff53;
 $green-theme_tooltip_text: #054715;
+
+$green-theme_lang_hover: #daff53;
+
+$green-theme_404: #daff53;
 /* green-theme ********************************************************************************/
 /* green-theme ********************************************************************************/
 .green-theme {
@@ -76,6 +80,13 @@ $green-theme_tooltip_text: #054715;
   // palette
   .palette-themes {
     background-color: $green-theme_navbar_bg;
+  }
+  // lang
+  .lang-choose {
+    background-color: $green-theme_navbar_bg;
+  }
+  .lang-item:hover {
+    background-color: $green-theme_lang_hover;
   }
   // footer
   .madeby {
@@ -133,5 +144,9 @@ $green-theme_tooltip_text: #054715;
 
   .tooltip .tooltip-arrow {
     border-color: $green-theme_tooltip_bg;
+  }
+  // 404
+  .p404 {
+    color: $green-theme_404;
   }
 }

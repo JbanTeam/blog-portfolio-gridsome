@@ -1,13 +1,21 @@
 <template>
   <Layout>
     <main>
-      <h1 class="title text-center mb-3">About me</h1>
-      <p class="desc text-center">My name is JT, I'm a full-stack web-developer. You can find technologies, which I use in my work, below. If You want to cooperate with me, please write on my
+      <h1 class="title text-center mb-3">{{this.$lang.about[curLang].title}}</h1>
+
+      <p v-if="curLang === 'en'" class="desc text-center">My name is JT, I'm a full-stack web-developer. You can find technologies, which I use in my work, below. If You want to cooperate with me, please write on my
         <a class="text-decoration-none" target="_blank" rel="noopener" href="https://t.me/Mad_Advocado">
           telegram
         </a> or
         <a class="text-decoration-none" target="_blank" rel="noopener" href="https://vk.com">vKontakte</a>.
       </p>
+      <p v-if="curLang === 'rus'" class="desc text-center">Меня зовут JT, я full-stack веб-разработчик. Вы можете увидеть технологии, которыми я пользуюсь в своей работе, ниже. Если Вы хотите сотрудничать со иной, напишите в
+        <a class="text-decoration-none" target="_blank" rel="noopener" href="https://t.me/Mad_Advocado">
+          telegram
+        </a> или
+        <a class="text-decoration-none" target="_blank" rel="noopener" href="https://vk.com">vKontakte</a>.
+      </p>
+
       <div class="techs withline">
         <span class="tech-icon" v-for="tech in techs" :key="tech.id">
           <font-awesome :style="tech.color" :icon="tech.name" size="4x" v-tooltip="{
@@ -25,8 +33,16 @@ export default {
   metaInfo: {
     title: "About"
   },
+  mounted() {
+    this.$eventBus.$on("changeLang", lang => (this.curLang = lang));
+    let lang = localStorage.getItem("mylang");
+    if (lang) {
+      this.curLang = lang;
+    }
+  },
   data() {
     return {
+      curLang: "en",
       techs: [
         {
           id: 1,

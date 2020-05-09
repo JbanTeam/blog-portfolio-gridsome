@@ -1,9 +1,9 @@
 <template>
-  <transition name="slide">
+  <transition name="fade">
     <div class="mobile-menu">
       <ul class="menu-list">
         <li class="menu-item" v-for="link in this.links" :key="link.url">
-          <g-link class="menu-item__link text-grey py-3" :exact="link.name === 'Blog' ? false : true" active-class="bg-warning text-white" :to="link.url"><span>{{link.name}}</span></g-link>
+          <g-link class="menu-item__link text-grey py-3" :exact="link.url === '/blog' ? false : true" active-class="bg-warning text-white" :to="link.url"><span>{{link.name}}</span></g-link>
         </li>
         <li class="my-5">
           <a class="soc-link text-grey px-2" target="_blank" rel="noopener" v-for="soclink in socLinks" :key="soclink.url" :href="soclink.url">
@@ -91,31 +91,31 @@ export default {
 }
 
 /*transition ********************************************************** */
-.slide-enter {
+.fade-enter {
   /* добавляется на долю секунды до анимации */
   opacity: 0;
 }
 
-.slide-enter-active {
-  /* добавляется когда анимация начинает идти, .slide-enter удаляется*/
+.fade-enter-active {
+  /* добавляется когда анимация начинает идти, .fade-enter удаляется*/
   transition: opacity 0.5s;
 }
 
-.slide-enter-to {
+.fade-enter-to {
   /* остается на долю секунды после того, как анимация завершилась */
 }
 
-.slide-leave {
+.fade-leave {
   /* добавляется на долю секунды до анимации */
   /* opacity: 0; */
 }
 
-.slide-leave-active {
-  /* добавляется когда анимация начинает идти, .slide-leave удаляется*/
+.fade-leave-active {
+  /* добавляется когда анимация начинает идти, .fade-leave удаляется*/
   transition: opacity 0.5s;
 }
 
-.slide-leave-to {
+.fade-leave-to {
   /* остается на долю секунды после того, как анимация завершилась */
   opacity: 0;
 }

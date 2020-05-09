@@ -5,7 +5,7 @@
         <g-link class="logo-link text-decoration-none flex-grow-1" style="font-size: 20px;" to="/">JbanTeam</g-link>
 
         <div class="madeby flex-grow-1">
-          <span>Made by JT, © 2020</span>
+          <span>{{this.$lang.madeby[curLang]}}</span>
         </div>
 
         <ul class="soc-list flex-grow-1 justify-content-end">
@@ -23,8 +23,16 @@
 <script>
 export default {
   props: ["siteName"],
+  mounted() {
+    this.$eventBus.$on("changeLang", lang => (this.curLang = lang));
+    let lang = localStorage.getItem("mylang");
+    if (lang) {
+      this.curLang = lang;
+    }
+  },
   data() {
     return {
+      curLang: "en",
       links: [
         {
           url: "https://t.me/Mad_Advocado",

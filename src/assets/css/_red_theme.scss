@@ -38,6 +38,10 @@ $red-theme_card_boxshadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.4);
 
 $red-theme_tooltip_bg: #ff473a;
 $red-theme_tooltip_text: #fff;
+
+$red-theme_lang_hover: #ff473a;
+
+$red-theme_404: #ff473a;
 /* red-theme ********************************************************************************/
 /* red-theme ********************************************************************************/
 .red-theme {
@@ -76,6 +80,13 @@ $red-theme_tooltip_text: #fff;
   // palette
   .palette-themes {
     background-color: $red-theme_navbar_bg;
+  }
+  // lang
+  .lang-choose {
+    background-color: $red-theme_navbar_bg;
+  }
+  .lang-item:hover {
+    background-color: $red-theme_lang_hover;
   }
   // footer
   .madeby {
@@ -133,5 +144,9 @@ $red-theme_tooltip_text: #fff;
 
   .tooltip .tooltip-arrow {
     border-color: $red-theme_tooltip_bg;
+  }
+  // 404
+  .p404 {
+    color: $red-theme_404;
   }
 }
