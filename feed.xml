@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>A Gridsome Minimal Blog</title>
-        <link>https://github.com/JbanTeam</link>
+        <link>https://jbanteam.github.io/blog-portfolio-gridsome</link>
         <description>Best blog feed evah.</description>
-        <lastBuildDate>Thu, 20 Aug 2020 18:10:13 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Aug 2020 18:53:29 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Gridsome Feed Plugin</generator>
         <item>
             <title><![CDATA[5 Vuex Plugins]]></title>
-            <link>https://github.com/blog/5-vuex-plugins/</link>
-            <guid>https://github.com/blog/5-vuex-plugins/</guid>
+            <link>https://jbanteam.github.io/blog-portfolio-gridsome/blog/5-vuex-plugins/</link>
+            <guid>https://jbanteam.github.io/blog-portfolio-gridsome/blog/5-vuex-plugins/</guid>
             <pubDate>Sat, 02 May 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 ![Vue](/uploads/blog/vue-secondpost/vue-secondpost.jpeg)
@@ -63,8 +63,8 @@ The end.
         </item>
         <item>
             <title><![CDATA[How to Structure a Vue.js Project]]></title>
-            <link>https://github.com/blog/how-to-structure-a-vue-js-project/</link>
-            <guid>https://github.com/blog/how-to-structure-a-vue-js-project/</guid>
+            <link>https://jbanteam.github.io/blog-portfolio-gridsome/blog/how-to-structure-a-vue-js-project/</link>
+            <guid>https://jbanteam.github.io/blog-portfolio-gridsome/blog/how-to-structure-a-vue-js-project/</guid>
             <pubDate>Thu, 30 Apr 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 ![Vue](/uploads/blog/vuepost/vue.png)
@@ -151,8 +151,8 @@ Whether you are an advanced or beginner with Vue.js you should read this Vue.js 
         </item>
         <item>
             <title><![CDATA[Third Post]]></title>
-            <link>https://github.com/blog/third-post/</link>
-            <guid>https://github.com/blog/third-post/</guid>
+            <link>https://jbanteam.github.io/blog-portfolio-gridsome/blog/third-post/</link>
+            <guid>https://jbanteam.github.io/blog-portfolio-gridsome/blog/third-post/</guid>
             <pubDate>Thu, 23 Jan 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 ```
@@ -163,8 +163,8 @@ print(hello_world)
         </item>
         <item>
             <title><![CDATA[Second Post]]></title>
-            <link>https://github.com/blog/second-post/</link>
-            <guid>https://github.com/blog/second-post/</guid>
+            <link>https://jbanteam.github.io/blog-portfolio-gridsome/blog/second-post/</link>
+            <guid>https://jbanteam.github.io/blog-portfolio-gridsome/blog/second-post/</guid>
             <pubDate>Wed, 25 Dec 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla arcu sit amet nunc pulvinar sagittis. Quisque condimentum faucibus posuere. Etiam nisl ex, lobortis a felis a, ornare accumsan turpis. Etiam tristique lobortis nisl eu congue. Vivamus tempus enim pharetra sem rhoncus, eget facilisis turpis commodo. Aenean posuere ultricies erat, a dapibus tortor semper eget. Nullam sed cursus risus. Fusce massa ligula, varius pellentesque magna in, malesuada faucibus magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed dui turpis, fermentum ut varius non, sollicitudin quis elit. Sed dignissim enim id nulla vehicula, nec accumsan ante vestibulum. Donec luctus mollis mi ut iaculis. Aenean sit amet erat mi.
@@ -180,8 +180,8 @@ Aliquam ultrices ante a libero ultricies molestie. Sed bibendum sollicitudin met
         </item>
         <item>
             <title><![CDATA[First Post]]></title>
-            <link>https://github.com/blog/first-post/</link>
-            <guid>https://github.com/blog/first-post/</guid>
+            <link>https://jbanteam.github.io/blog-portfolio-gridsome/blog/first-post/</link>
+            <guid>https://jbanteam.github.io/blog-portfolio-gridsome/blog/first-post/</guid>
             <pubDate>Sat, 20 Apr 2019 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[
 This is the first post, it is written in Markdown.
