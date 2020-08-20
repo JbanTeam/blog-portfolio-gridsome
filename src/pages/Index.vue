@@ -22,15 +22,16 @@ import CodeIcon from "~/components/CodeIcon";
 import SortAll from "@/components/sort/SortAll";
 export default {
   metaInfo: {
-    title: "Home"
+    title: "Home",
   },
   components: {
     ProjectList,
     CodeIcon,
-    SortAll
+    SortAll,
   },
   created() {
-    let lang = localStorage.getItem("mylang");
+    let lang;
+    if (process.isClient) lang = localStorage.getItem("mylang");
     if (lang) {
       this.curLang = lang;
       this.tag = this.initialSelectOpts[this.curLang][0];
@@ -47,8 +48,8 @@ export default {
       localTags: [],
       initialSelectOpts: {
         en: ["All", "Source code", "Site"],
-        rus: ["Все", "Исходный код", "Сайт"]
-      }
+        rus: ["Все", "Исходный код", "Сайт"],
+      },
     };
   },
   computed: {
@@ -57,7 +58,7 @@ export default {
       if (this.tag === "All" || this.tag === "Все") return projects;
       else {
         let index = this.initialSelectOpts[this.curLang].indexOf(this.tag);
-        projects = projects.filter(proj => {
+        projects = projects.filter((proj) => {
           return (
             proj.tags.includes(this.tag) ||
             proj.src[this.curLang] ===
@@ -69,12 +70,12 @@ export default {
     },
     tags() {
       let tags = [];
-      this.$page.allProjectsArr.edges[0].node.projects.forEach(proj => {
+      this.$page.allProjectsArr.edges[0].node.projects.forEach((proj) => {
         tags.push(...proj.tags);
       });
       tags = [...this.localTags, ...new Set(tags)];
       return tags;
-    }
+    },
   },
   methods: {
     onTagChange(tag) {
@@ -85,8 +86,8 @@ export default {
       if (index !== -1) this.tag = this.initialSelectOpts[lang][index];
       this.curLang = lang;
       this.localTags = [...this.initialSelectOpts[this.curLang]];
-    }
-  }
+    },
+  },
 };
 </script>
 <page-query>

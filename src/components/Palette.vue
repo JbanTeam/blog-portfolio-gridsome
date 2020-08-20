@@ -13,7 +13,10 @@
 export default {
   props: ["menuOpen"],
   created() {
-    if (localStorage.getItem("mytheme")) {
+    // проверка process.isClient нужна, так как мы в хуке created(вызывается на сервере), на сервере нет localStorage(mounted так же решает проблему, если он подходит, в данном случае не подходит)
+    if (process.isClient && localStorage.getItem("mytheme")) {
+      // console.log(localStorage);
+
       this.currentTheme = localStorage.getItem("mytheme");
     } else {
       this.currentTheme = "dark-theme";
@@ -24,21 +27,21 @@ export default {
       currentTheme: "",
       themes: {
         "light-theme": {
-          class: "palette-light"
+          class: "palette-light",
         },
         "dark-theme": {
-          class: "palette-dark"
+          class: "palette-dark",
         },
         "red-theme": {
-          class: "palette-red"
+          class: "palette-red",
         },
         "blue-theme": {
-          class: "palette-blue"
+          class: "palette-blue",
         },
         "green-theme": {
-          class: "palette-green"
-        }
-      }
+          class: "palette-green",
+        },
+      },
     };
   },
   computed: {},
@@ -49,8 +52,8 @@ export default {
       localStorage.setItem("mytheme", `${theme}`);
       document.querySelector("body").classList.add(`${theme}`);
       this.$eventBus.$emit("changeTheme", theme);
-    }
-  }
+    },
+  },
 };
 </script>
 

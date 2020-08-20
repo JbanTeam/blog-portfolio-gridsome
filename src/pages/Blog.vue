@@ -21,13 +21,16 @@ export default {
   components: {
     PostList,
     SortAll,
-    SortDate
+    SortDate,
   },
   metaInfo: {
-    title: "Blog"
+    title: "Blog",
   },
   created() {
-    let lang = localStorage.getItem("mylang");
+    let lang;
+    if (process.isClient) {
+      lang = localStorage.getItem("mylang");
+    }
     if (lang) {
       this.curLang = lang;
       this.tag = this.initialSelectOpts[this.curLang][0];
@@ -45,8 +48,8 @@ export default {
       localTags: [],
       initialSelectOpts: {
         en: ["All"],
-        rus: ["Все"]
-      }
+        rus: ["Все"],
+      },
     };
   },
   computed: {
@@ -55,7 +58,7 @@ export default {
       if (this.tag === "All" || this.tag === "Все")
         posts = this.$page.allPost.edges;
       else {
-        posts = this.$page.allPost.edges.filter(post => {
+        posts = this.$page.allPost.edges.filter((post) => {
           return post.node.tags.includes(this.tag);
         });
       }
@@ -68,12 +71,12 @@ export default {
     },
     tags() {
       let tags = [];
-      this.$page.allPost.edges.forEach(post => {
+      this.$page.allPost.edges.forEach((post) => {
         tags.push(...post.node.tags);
       });
       tags = [...this.localTags, ...new Set(tags)];
       return tags;
-    }
+    },
   },
   methods: {
     onDateChange(date) {
@@ -87,8 +90,8 @@ export default {
       if (index !== -1) this.tag = this.initialSelectOpts[lang][index];
       this.curLang = lang;
       this.localTags = [...this.initialSelectOpts[this.curLang]];
-    }
-  }
+    },
+  },
 };
 </script>
 
