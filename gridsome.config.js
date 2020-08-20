@@ -6,7 +6,8 @@
 
 module.exports = {
   siteName: 'JbanTeam Blog',
-  siteUrl: 'https://github.com/JbanTeam',
+  siteUrl: 'https://jbanteam.github.io',
+  pathPrefix: '/blog-portfolio-gridsome',
   siteDescription: 'My first gridsome blog',
   plugins: [
     {

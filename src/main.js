@@ -9,6 +9,8 @@ import './assets/css/hamburgers.min.css';
 
 import VTooltip from 'v-tooltip';
 
+// TODO: для деплоя используется пакет gh-pages, в package.json добавлены соответсвующие скрипты, в gridsome.config.js адрес репозитория(npm run deploy нужно запускать из bash)
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
 import {
