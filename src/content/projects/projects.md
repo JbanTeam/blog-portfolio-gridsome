@@ -30,7 +30,7 @@ projects:
       link: 'https://github.com/JbanTeam/blog-portfolio-gridsome',
       desc: { en: 'Source code of this blog/portfolio', rus: 'Исходный код этого сайта-портфолио' },
       src: { en: 'Source code', rus: 'Исходный код' },
-      image: '/uploads/projects/transsidSiteSource.jpg',
+      image: '/uploads/projects/blogSiteSource.jpg',
       tags: ['Vuejs', 'Gridsome'],
     },
     {
