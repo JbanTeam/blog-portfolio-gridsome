@@ -10,14 +10,8 @@
       <p class="desc projects-desc text-center">{{this.$lang.home[curLang].desc}}</p>
       <div class="form-group sort-wrapper">
         <SortAll :lang="curLang" :tags="tags" :sortTag="tag" :selectOpts="initialSelectOpts" @tagChange="onTagChange($event)" />
-        <!-- <div>
-          <label for="sort">Sort by:</label>
-          <select class="form-control form-control-sm" id="sort" v-model="tag">
-            <option v-for="tag in this.tags" :key="tag">{{tag}}</option>
-          </select>
-        </div> -->
       </div>
-      <ProjectList :projects="this.projects" />
+      <ProjectList :projects="projects" />
     </main>
   </Layout>
 </template>
@@ -59,7 +53,6 @@ export default {
   },
   computed: {
     projects() {
-      // TODO: projects src localization
       let projects = this.$page.allProjectsArr.edges[0].node.projects;
       if (this.tag === "All" || this.tag === "Все") return projects;
       else {
@@ -67,7 +60,8 @@ export default {
         projects = projects.filter(proj => {
           return (
             proj.tags.includes(this.tag) ||
-            proj.src === this.initialSelectOpts.en[index]
+            proj.src[this.curLang] ===
+              this.initialSelectOpts[this.curLang][index]
           );
         });
         return projects;
@@ -110,7 +104,10 @@ query {
             en
             rus
           },
-          src,
+          src {
+            en,
+            rus
+          },
           image,
           tags
         }

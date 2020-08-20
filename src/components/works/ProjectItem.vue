@@ -10,7 +10,7 @@
           <p class="card-text project-desc">{{project.desc[curLang]}}</p>
           <div class="tags mt-auto">
             <span class="tag" v-for="tag in project.tags" :key="tag">#{{tag}}</span>
-            <span class="tag tag-src">#{{project.src.toLowerCase()}}</span>
+            <span class="tag tag-src">#{{project.src[curLang].toLowerCase()}}</span>
           </div>
         </div>
         <span class="card-btn">

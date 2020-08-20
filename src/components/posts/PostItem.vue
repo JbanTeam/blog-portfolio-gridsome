@@ -6,7 +6,7 @@
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">{{this.post.title}}</h5>
           <p class="card-text flex-grow-1">{{this.post.description}}</p>
-          <span class="card-date">{{this.post.date}}</span>
+          <span class="card-date">{{localDate}}</span>
           <div class="tags">
             <span class="tag" v-for="tag in this.post.tags" :key="tag">#{{tag}}</span>
           </div>
@@ -21,7 +21,10 @@
 
 <script>
 export default {
-  props: ["post"],
+  props: ["post", "months", "curLang"],
+  mounted() {
+    this.$eventBus.$on("changeLang", this.onLangChange);
+  },
   data() {
     return {};
   },
@@ -29,9 +32,22 @@ export default {
     date() {
       return this.post.date.substring(0, this.post.date.length - 4);
     },
+    localDate() {
+      let month = this.post.date.split(" ")[0];
+      let index = this.months.en.indexOf(month);
+      month = this.months[this.curLang][index];
+
+      let postDateArr = this.post.date.split(" ");
+
+      postDateArr.splice(0, 1, month);
+      return postDateArr.join(" ");
+    },
     img() {
       return this.post.image;
     }
+  },
+  methods: {
+    onLangChange(lang) {}
   }
 };
 </script>

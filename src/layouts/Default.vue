@@ -44,6 +44,7 @@ export default {
     document.querySelector(".mobile-menu").classList.remove("scroll-on");
   },
   data() {
+    // TODO: posts localization, add this blog to projects
     return {
       currentTheme: "dark-theme",
       colors: {

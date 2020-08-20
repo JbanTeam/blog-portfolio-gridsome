@@ -8,7 +8,7 @@
         <SortAll :lang="curLang" :tags="tags" :sortTag="tag" :selectOpts="initialSelectOpts" @tagChange="onTagChange($event)" />
 
       </div>
-      <PostList :posts="this.posts" />
+      <PostList :posts="posts" :curLang="curLang" />
     </main>
   </Layout>
 </template>
@@ -76,7 +76,6 @@ export default {
     }
   },
   methods: {
-    // TODO: cards dates localization
     onDateChange(date) {
       this.date = date;
     },
@@ -120,7 +119,4 @@ query {
 </page-query>
 
 <style>
-.posts {
-  /* margin-bottom: 44px; */
-}
 </style>
