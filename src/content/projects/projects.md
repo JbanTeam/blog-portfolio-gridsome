@@ -2,6 +2,22 @@
 projects:
   [
     {
+      name: { en: 'Freelance Scrap Web App Client', rus: 'Вэб-приложение парсинг фриланс-бирж, клиент' },
+      link: 'https://github.com/JbanTeam/FreelanceScrap_client',
+      desc: { en: 'Client side on Vuejs', rus: 'Клиентская часть на Vuejs' },
+      src: { en: 'Source code', rus: 'Исходный код' },
+      image: '/uploads/projects/freelanceScrap_client.jpg',
+      tags: ['Vuejs', 'Bootstrap-Vue', 'Vuex'],
+    },
+    {
+      name: { en: 'Freelance Scrap Web App Sever With Tg-bot', rus: 'Вэб-приложение парсинг фриланс-бирж, сервер с телеграм ботом' },
+      link: 'https://github.com/JbanTeam/iphoneShopServer',
+      desc: { en: 'Server side on Nodejs', rus: 'Серверная часть на Nodejs' },
+      src: { en: 'Source code', rus: 'Исходный код' },
+      image: '/uploads/projects/freelanceScrap_server.jpg',
+      tags: ['Nodejs', 'Express', 'Telegraf'],
+    },
+    {
       name: { en: 'Iphone Shop', rus: 'Интернет-магазин IphoneShop' },
       link: 'https://github.com/JbanTeam/iphoneShopClient',
       desc: { en: 'Client side on Vuejs', rus: 'Клиентская часть на Vuejs' },
